@@ -147,6 +147,11 @@ header {
     width: 100%;
 }
 
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
 /* Hero Section */
 .hero {
     padding: 5rem 0;
@@ -752,5 +757,141 @@ footer {
     .how-it-works,
     .pricing {
         padding: 3rem 0;
+    }
+}
+
+/* Cookie Consent Banner */
+.cookie-consent {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--background);
+    border-top: 2px solid var(--border-color);
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 1500;
+    padding: 1.5rem;
+    animation: slideInUp 0.4s ease-out;
+}
+
+.cookie-consent.show {
+    display: block;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.cookie-consent-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.cookie-consent-text {
+    flex: 1;
+}
+
+.cookie-consent-text p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cookie-consent-text p:first-child {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.cookie-consent-text p:last-child {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.cookie-consent-actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+/* Cookie Preferences Modal */
+.cookie-preference-section {
+    margin: 2rem 0;
+}
+
+.cookie-preference-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cookie-preference-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cookie-preference-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.cookie-preference-header input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+}
+
+.cookie-preference-header input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.cookie-preference-header label {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cookie-preference-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-left: 2rem;
+    line-height: 1.5;
+}
+
+.cookie-preference-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design for Cookie Banner */
+@media (max-width: 768px) {
+    .cookie-consent-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cookie-consent-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .cookie-consent-actions .btn {
+        width: 100%;
+    }
+
+    .cookie-preference-actions {
+        flex-direction: column;
     }
 }
