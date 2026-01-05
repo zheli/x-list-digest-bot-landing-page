@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X List Digest Bot - Automated Twitter List Digests to Telegram</title>
+    <meta name="description" content="Subscribe to receive automated X (Twitter) list digests delivered to your Telegram channels. Start your 7-day free trial today!">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>X List Digest Bot</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <button class="btn btn-outline" id="login-btn">Login</button>
+                    <button class="btn btn-primary" id="signup-btn">Get Started</button>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Automated X List Digests Delivered to Telegram</h2>
+                <p class="hero-subtitle">Stay updated with curated content from your favorite Twitter lists, delivered directly to your Telegram channels. Never miss important tweets again.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-large" id="hero-cta">Start 7-Day Free Trial</button>
+                    <p class="trial-info">No credit card required</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-illustration">
+                    <div class="illustration-card">
+                        <div class="illustration-icon">📱</div>
+                        <div class="illustration-text">Telegram</div>
+                    </div>
+                    <div class="illustration-arrow">→</div>
+                    <div class="illustration-card">
+                        <div class="illustration-icon">🐦</div>
+                        <div class="illustration-text">X Lists</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">Everything you need to stay informed</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Automated Digests</h3>
+                    <p>Receive curated summaries of your Twitter lists automatically at scheduled times.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-time Updates</h3>
+                    <p>Get instant notifications for important tweets from your lists.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Filtering</h3>
+                    <p>Advanced algorithms filter out noise and deliver only the most relevant content.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Track engagement and understand what content resonates most.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is encrypted and never shared with third parties.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Multi-Channel Support</h3>
+                    <p>Manage multiple Telegram channels and Twitter lists seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Get started in three simple steps</p>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Connect Your Accounts</h3>
+                        <p>Link your Twitter and Telegram accounts securely. We only request the permissions we need.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Select Your Lists</h3>
+                        <p>Choose which Twitter lists you want to monitor and which Telegram channels to deliver to.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Customize & Automate</h3>
+                        <p>Set your schedule, configure filters, and let the bot do the rest. Receive your first digest within minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">All plans include a 7-day free trial</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">9</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>✓ 3 Twitter Lists</li>
+                            <li>✓ 1 Telegram Channel</li>
+                            <li>✓ Daily Digests</li>
+                            <li>✓ Basic Filtering</li>
+                            <li>✓ Email Support</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline btn-full signup-trigger">Start Free Trial</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">29</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>✓ 10 Twitter Lists</li>
+                            <li>✓ 5 Telegram Channels</li>
+                            <li>✓ Real-time + Daily Digests</li>
+                            <li>✓ Advanced Filtering</li>
+                            <li>✓ Analytics Dashboard</li>
+                            <li>✓ Priority Support</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary btn-full signup-trigger">Start Free Trial</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">99</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>✓ Unlimited Lists</li>
+                            <li>✓ Unlimited Channels</li>
+                            <li>✓ Custom Schedules</li>
+                            <li>✓ AI-Powered Insights</li>
+                            <li>✓ Advanced Analytics</li>
+                            <li>✓ Dedicated Support</li>
+                            <li>✓ Custom Integrations</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline btn-full signup-trigger">Start Free Trial</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>X List Digest Bot</h4>
+                    <p>Automated Twitter list digests delivered to Telegram.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> X List Digest Bot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Start Your Free Trial</h2>
+            <p class="modal-subtitle">7 days free, no credit card required</p>
+            <form id="signup-form" novalidate>
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" name="name" required>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" name="email" required>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" required>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" name="confirmPassword" required>
+                    <span class="error-message"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                <p class="form-footer">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Welcome Back</h2>
+            <p class="modal-subtitle">Login to your account</p>
+            <form id="login-form" novalidate>
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" name="email" required>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group-checkbox">
+                    <input type="checkbox" id="remember-me" name="rememberMe">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Login</button>
+                <p class="form-footer">Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
