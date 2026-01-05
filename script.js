@@ -31,8 +31,13 @@ function checkCookieConsent() {
     if (!consent) {
         showCookieBanner();
     } else {
-        const consentData = JSON.parse(consent);
-        applyConsent(consentData);
+        try {
+            const consentData = JSON.parse(consent);
+            applyConsent(consentData);
+        } catch (e) {
+            // If cookie is malformed, show banner again
+            showCookieBanner();
+        }
     }
 }
 
@@ -103,10 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Load existing preferences if available
             const existingConsent = getCookie(COOKIE_CONSENT_NAME);
             if (existingConsent) {
-                const consentData = JSON.parse(existingConsent);
-                const analyticsCheckbox = document.getElementById('cookie-analytics');
-                if (analyticsCheckbox) {
-                    analyticsCheckbox.checked = consentData.analytics || false;
+                try {
+                    const consentData = JSON.parse(existingConsent);
+                    const analyticsCheckbox = document.getElementById('cookie-analytics');
+                    if (analyticsCheckbox) {
+                        analyticsCheckbox.checked = consentData.analytics || false;
+                    }
+                } catch (e) {
+                    // If cookie is malformed, just use defaults
                 }
             }
         });
