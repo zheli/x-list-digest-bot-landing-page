@@ -291,15 +291,6 @@ function showSuccessMessage(modal, message) {
     
     const successDiv = document.createElement('div');
     successDiv.className = 'success-message';
-    successDiv.style.cssText = `
-        background: #10b981;
-        color: white;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-        text-align: center;
-        font-weight: 500;
-    `;
     successDiv.textContent = message;
     
     form.insertAdjacentElement('beforebegin', successDiv);
@@ -361,3 +352,11 @@ if (signupPassword && signupConfirmPassword) {
         }
     });
 }
+
+// Set current year in footer
+document.addEventListener('DOMContentLoaded', () => {
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+});
