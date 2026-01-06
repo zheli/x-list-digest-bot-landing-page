@@ -12,6 +12,12 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        
+        // Set default consent to denied
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied'
+        });
+        
         gtag('js', new Date());
         gtag('config', 'G-S552XLN0E6');
     </script>
@@ -309,6 +315,49 @@
                 <button type="submit" class="btn btn-primary btn-full">Login</button>
                 <p class="form-footer">Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
             </form>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p><strong>We value your privacy</strong></p>
+                <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button class="btn btn-outline btn-small" id="cookie-customize">Customize</button>
+                <button class="btn btn-primary btn-small" id="cookie-accept">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Preferences Modal -->
+    <div id="cookie-preferences-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cookie Preferences</h2>
+            <p class="modal-subtitle">Manage your cookie preferences</p>
+            <div class="cookie-preference-section">
+                <div class="cookie-preference-item">
+                    <div class="cookie-preference-header">
+                        <input type="checkbox" id="cookie-necessary" checked disabled>
+                        <label for="cookie-necessary"><strong>Necessary Cookies</strong></label>
+                    </div>
+                    <p class="cookie-preference-description">These cookies are essential for the website to function properly. They cannot be disabled.</p>
+                </div>
+                <div class="cookie-preference-item">
+                    <div class="cookie-preference-header">
+                        <input type="checkbox" id="cookie-analytics">
+                        <label for="cookie-analytics"><strong>Analytics Cookies</strong></label>
+                    </div>
+                    <p class="cookie-preference-description">These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+                </div>
+            </div>
+            <div class="cookie-preference-actions">
+                <button class="btn btn-outline btn-full" id="cookie-reject-all">Reject All</button>
+                <button class="btn btn-primary btn-full" id="cookie-save-preferences">Save Preferences</button>
+            </div>
         </div>
     </div>
 
