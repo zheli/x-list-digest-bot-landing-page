@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to inject environment variables into index.html from index.html.template
+# Script to inject environment variables into index.html from index.template.html
 #
 # Usage:
 #   ./inject-env.sh
@@ -34,6 +34,6 @@ if ! echo "$GOOGLE_ANALYTICS_STREAM_ID" | grep -qE '^G-[A-Z0-9]+$'; then
 fi
 
 # Replace placeholder with actual value using sed
-sed "s/{{GOOGLE_ANALYTICS_STREAM_ID}}/$GOOGLE_ANALYTICS_STREAM_ID/g" index.html.template > index.html
+sed "s/{{GOOGLE_ANALYTICS_STREAM_ID}}/$GOOGLE_ANALYTICS_STREAM_ID/g" index.template.html > index.html
 
 echo "Successfully generated index.html with Google Analytics ID"

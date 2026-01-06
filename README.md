@@ -40,12 +40,17 @@ The deployment workflow will automatically inject this ID when deploying to GitH
 
 3. Generate `index.html` from the template:
    ```bash
+   make build
+   ```
+   
+   Or directly with the script:
+   ```bash
    ./inject-env.sh
    ```
    
    Or with environment variable directly:
    ```bash
-   GOOGLE_ANALYTICS_STREAM_ID=G-ABC123XYZ ./inject-env.sh
+   GOOGLE_ANALYTICS_STREAM_ID=G-ABC123XYZ make build
    ```
 
 4. Open `index.html` in a web browser to view the landing page locally.
@@ -56,14 +61,30 @@ The deployment workflow will automatically inject this ID when deploying to GitH
 
 For local development:
 
-1. **Quick start (no analytics):** Simply open `index.html` in a web browser. The page will work but analytics will not be collected (placeholder ID).
+1. **Quick start (no analytics):** 
+   - Simply open `index.template.html` directly in a web browser
+   - The page will work but analytics will not be collected (placeholder ID shows in template)
 
 2. **With analytics (optional):**
    - Copy `.env.example` to `.env`
    - Edit `.env` and replace `G-XXXXXXXXXX` with your actual GA4 Measurement ID
-   - Generate index.html: `./inject-env.sh`
+   - Generate index.html: `make build`
    - Open the generated `index.html` in a web browser
 
-**Note:** The `index.html` file in the repository contains placeholder values. When making changes to the page structure or content, edit `index.html.template` instead and regenerate `index.html` using the script. Be careful not to commit `index.html` with real Google Analytics IDs.
+### Makefile Commands
+
+- `make help` - Show available commands
+- `make build` - Generate index.html from template
+- `make clean` - Remove generated index.html
+- `make test` - Test the build process
+
+### File Structure
+
+- `index.template.html` - The source template (can be opened directly in browser)
+- `index.html` - Generated file (not committed to git)
+- `inject-env.sh` - Script to inject environment variables
+- `Makefile` - Build automation
+
+**Note:** When making changes to the page structure or content, edit `index.template.html` instead of `index.html`. The `index.html` file is generated and should not be committed to the repository.
 
 The site is a static HTML page and doesn't require a build process or server.
