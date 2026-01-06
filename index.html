@@ -22,6 +22,9 @@
         gtag('config', 'G-S552XLN0E6');
     </script>
     
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -56,7 +59,7 @@
                 <p class="hero-subtitle">Stay updated with curated content from your favorite Twitter lists, delivered directly to your Telegram channels. Never miss important tweets again.</p>
                 <div class="hero-cta">
                     <button class="btn btn-primary btn-large" id="hero-cta">Start 7-Day Free Trial</button>
-                    <p class="trial-info">No credit card required</p>
+                    <p class="trial-info">Credit card required, cancel anytime</p>
                 </div>
             </div>
             <div class="hero-image">
@@ -263,29 +266,17 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Start Your Free Trial</h2>
-            <p class="modal-subtitle">7 days free, no credit card required</p>
+            <p class="modal-subtitle">Enter your email to continue to payment setup</p>
             <form id="signup-form" novalidate>
-                <div class="form-group">
-                    <label for="signup-name">Full Name</label>
-                    <input type="text" id="signup-name" name="name" required>
-                    <span class="error-message"></span>
-                </div>
                 <div class="form-group">
                     <label for="signup-email">Email Address</label>
                     <input type="email" id="signup-email" name="email" required>
                     <span class="error-message"></span>
                 </div>
-                <div class="form-group">
-                    <label for="signup-password">Password</label>
-                    <input type="password" id="signup-password" name="password" required>
-                    <span class="error-message"></span>
-                </div>
-                <div class="form-group">
-                    <label for="signup-confirm-password">Confirm Password</label>
-                    <input type="password" id="signup-confirm-password" name="confirmPassword" required>
-                    <span class="error-message"></span>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                <button type="submit" class="btn btn-primary btn-full">Continue to Payment</button>
+                <p class="form-footer" style="font-size: 0.875rem; margin-top: 1rem;">
+                    You'll be redirected to Stripe to securely enter your payment information. Your 7-day free trial starts now.
+                </p>
                 <p class="form-footer">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
             </form>
         </div>

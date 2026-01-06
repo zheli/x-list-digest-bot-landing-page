@@ -1,3 +1,11 @@
+// Stripe Configuration
+// IMPORTANT: Replace with your actual Stripe publishable key
+// Get your key from https://dashboard.stripe.com/apikeys
+const STRIPE_PUBLISHABLE_KEY = 'pk_test_YOUR_PUBLISHABLE_KEY_HERE';
+
+// Initialize Stripe - will be set after DOM loads if key is configured
+let stripe = null;
+
 // Cookie Consent Management
 const COOKIE_CONSENT_NAME = 'cookie-consent';
 const COOKIE_CONSENT_EXPIRY_DAYS = 365;
@@ -75,6 +83,11 @@ function enableAnalytics() {
 
 // Accept all cookies
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Stripe if key is configured
+    if (window.Stripe && STRIPE_PUBLISHABLE_KEY && !STRIPE_PUBLISHABLE_KEY.includes('YOUR_PUBLISHABLE_KEY_HERE')) {
+        stripe = window.Stripe(STRIPE_PUBLISHABLE_KEY);
+    }
+    
     const cookieAcceptBtn = document.getElementById('cookie-accept');
     const cookieCustomizeBtn = document.getElementById('cookie-customize');
     const cookiePreferencesModal = document.getElementById('cookie-preferences-modal');
@@ -265,18 +278,6 @@ const loginForm = document.getElementById('login-form');
 
 // Validation rules
 const validationRules = {
-    name: {
-        required: true,
-        minLength: 2,
-        maxLength: 50,
-        pattern: /^[a-zA-Z\s]+$/,
-        messages: {
-            required: 'Name is required',
-            minLength: 'Name must be at least 2 characters',
-            maxLength: 'Name must be less than 50 characters',
-            pattern: 'Name can only contain letters and spaces'
-        }
-    },
     email: {
         required: true,
         pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -294,35 +295,63 @@ const validationRules = {
             minLength: 'Password must be at least 8 characters',
             pattern: 'Password must contain uppercase, lowercase, and number'
         }
-    },
-    confirmPassword: {
-        required: true,
-        match: 'password',
-        messages: {
-            required: 'Please confirm your password',
-            match: 'Passwords do not match'
-        }
     }
 };
 
 // Signup form submission
-signupForm.addEventListener('submit', (e) => {
+signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     if (validateForm(signupForm)) {
         const formData = new FormData(signupForm);
-        const data = Object.fromEntries(formData);
+        const email = formData.get('email');
         
-        // Simulate API call
-        console.log('Signup data:', data);
+        // Check if Stripe is configured
+        if (!stripe) {
+            alert('Stripe is not configured. Please add your Stripe publishable key in script.js');
+            console.error('Stripe not initialized. Please set STRIPE_PUBLISHABLE_KEY in script.js');
+            return;
+        }
         
-        // Show success message
-        showSuccessMessage(signupModal, 'Account created successfully! Please check your email to verify your account.');
-        
-        // Close modal after 2 seconds
-        setTimeout(() => {
-            closeModal(signupModal);
-        }, 2000);
+        try {
+            // Show loading state
+            const submitBtn = signupForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+            
+            // In a real implementation, you would call your backend to create a Stripe Checkout session
+            // For now, we'll redirect to Stripe Checkout with a test session
+            // You need to implement a backend endpoint that creates a Checkout session
+            
+            // Example of how this would work with a backend:
+            // const response = await fetch('/create-checkout-session', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ email })
+            // });
+            // const session = await response.json();
+            // const result = await stripe.redirectToCheckout({ sessionId: session.id });
+            
+            // For demo purposes, show instructions
+            alert(`Stripe Checkout Integration Ready!\n\nEmail: ${email}\n\nTo complete the integration:\n1. Set up a backend endpoint to create Stripe Checkout sessions\n2. Update this handler to call your endpoint\n3. Redirect to Stripe Checkout with the session ID`);
+            
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            
+            // In production, the user would be redirected to Stripe Checkout
+            // and then redirected back to success.html after payment
+            
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+            
+            // Reset button
+            const submitBtn = signupForm.querySelector('button[type="submit"]');
+            submitBtn.textContent = 'Continue to Payment';
+            submitBtn.disabled = false;
+        }
     }
 });
 
@@ -517,18 +546,6 @@ document.querySelectorAll('.feature-card, .step, .pricing-card').forEach(el => {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
-
-// Handle password confirmation validation when password changes
-const signupPassword = document.getElementById('signup-password');
-const signupConfirmPassword = document.getElementById('signup-confirm-password');
-
-if (signupPassword && signupConfirmPassword) {
-    signupPassword.addEventListener('input', () => {
-        if (signupConfirmPassword.value) {
-            validateField(signupConfirmPassword);
-        }
-    });
-}
 
 // Set current year in footer
 document.addEventListener('DOMContentLoaded', () => {

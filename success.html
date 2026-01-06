@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to X List Digest Bot!</title>
+    <meta name="description" content="Thank you for signing up! We'll be in touch soon.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-hero);
+            padding: 2rem;
+        }
+        
+        .success-content {
+            background: white;
+            padding: 4rem 3rem;
+            border-radius: 1.5rem;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .success-message {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .success-details {
+            background: var(--background-alt);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .success-details h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .success-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .success-details li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+        
+        .success-details li::before {
+            content: "✓ ";
+            color: var(--success-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .success-content {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .success-title {
+                font-size: 2rem;
+            }
+            
+            .success-message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-page">
+        <div class="success-content">
+            <div class="success-icon">🎉</div>
+            <h1 class="success-title">Welcome Aboard!</h1>
+            <p class="success-message">
+                Thank you for starting your free trial with X List Digest Bot. Your subscription has been successfully activated!
+            </p>
+            
+            <div class="success-details">
+                <h3>What Happens Next?</h3>
+                <ul>
+                    <li>You will receive a confirmation email shortly</li>
+                    <li>Our team will get in touch with you within 24 hours</li>
+                    <li>We'll help you set up your Twitter lists and Telegram channels</li>
+                    <li>Your 7-day free trial starts now</li>
+                </ul>
+            </div>
+            
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 2rem;">
+                Have questions? Feel free to reach out to us at any time.
+            </p>
+            
+            <a href="index.html" class="btn btn-primary btn-large">Return to Home</a>
+        </div>
+    </div>
+</body>
+</html>
