@@ -38,22 +38,17 @@ The deployment workflow will automatically inject this ID when deploying to GitH
    GOOGLE_ANALYTICS_STREAM_ID=G-ABC123XYZ
    ```
 
-3. Install dotenv package (optional, for convenience):
+3. Generate `index.html` from the template:
    ```bash
-   npm install dotenv
-   ```
-
-4. Generate `index.html` from the template:
-   ```bash
-   node inject-env.js
+   ./inject-env.sh
    ```
    
    Or with environment variable directly:
    ```bash
-   GOOGLE_ANALYTICS_STREAM_ID=G-ABC123XYZ node inject-env.js
+   GOOGLE_ANALYTICS_STREAM_ID=G-ABC123XYZ ./inject-env.sh
    ```
 
-5. Open `index.html` in a web browser to view the landing page locally.
+4. Open `index.html` in a web browser to view the landing page locally.
 
 **Note:** The `.env` file is gitignored and will not be committed to the repository.
 
@@ -66,8 +61,7 @@ For local development:
 2. **With analytics (optional):**
    - Copy `.env.example` to `.env`
    - Edit `.env` and replace `G-XXXXXXXXXX` with your actual GA4 Measurement ID
-   - Install dotenv (optional): `npm install dotenv`
-   - Generate index.html: `node inject-env.js`
+   - Generate index.html: `./inject-env.sh`
    - Open the generated `index.html` in a web browser
 
 **Note:** The `index.html` file in the repository contains placeholder values. When making changes to the page structure or content, edit `index.html.template` instead and regenerate `index.html` using the script. Be careful not to commit `index.html` with real Google Analytics IDs.
