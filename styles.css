@@ -764,12 +764,13 @@ footer {
 .cookie-consent {
     display: none;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    max-width: 420px;
     background: var(--background);
-    border-top: 2px solid var(--border-color);
-    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 1500;
     padding: 1.5rem;
     animation: slideInUp 0.4s ease-out;
@@ -789,12 +790,9 @@ footer {
 }
 
 .cookie-consent-content {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .cookie-consent-text {
@@ -818,8 +816,8 @@ footer {
 
 .cookie-consent-actions {
     display: flex;
-    gap: 1rem;
-    flex-shrink: 0;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 /* Cookie Preferences Modal */
@@ -877,18 +875,15 @@ footer {
 
 /* Responsive Design for Cookie Banner */
 @media (max-width: 768px) {
-    .cookie-consent-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .cookie-consent-actions {
-        width: 100%;
-        flex-direction: column;
+    .cookie-consent {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
     }
 
     .cookie-consent-actions .btn {
-        width: 100%;
+        flex: 1;
     }
 
     .cookie-preference-actions {
