@@ -59,8 +59,17 @@ The deployment workflow will automatically inject this ID when deploying to GitH
 
 ## Development
 
-For local development without Google Analytics:
-1. Set a placeholder ID: `GOOGLE_ANALYTICS_STREAM_ID=G-XXXXXXXXXX node inject-env.js`
-2. Open the generated `index.html` in a web browser
+For local development:
+
+1. **Quick start (no analytics):** Simply open `index.html` in a web browser. The page will work but analytics will not be collected (placeholder ID).
+
+2. **With analytics (optional):**
+   - Copy `.env.example` to `.env`
+   - Edit `.env` and replace `G-XXXXXXXXXX` with your actual GA4 Measurement ID
+   - Install dotenv (optional): `npm install dotenv`
+   - Generate index.html: `node inject-env.js`
+   - Open the generated `index.html` in a web browser
+
+**Note:** The `index.html` file in the repository contains placeholder values. When making changes to the page structure or content, edit `index.html.template` instead and regenerate `index.html` using the script. Be careful not to commit `index.html` with real Google Analytics IDs.
 
 The site is a static HTML page and doesn't require a build process or server.

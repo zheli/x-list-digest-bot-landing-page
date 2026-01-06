@@ -63,7 +63,7 @@ const output = template.replace(/\{\{GOOGLE_ANALYTICS_STREAM_ID\}\}/g, googleAna
 // Write output file
 try {
   fs.writeFileSync(outputPath, output, 'utf8');
-  console.log(`Successfully generated index.html with Google Analytics ID: ${googleAnalyticsStreamId}`);
+  console.log(`Successfully generated index.html with Google Analytics ID`);
 } catch (error) {
   console.error(`Error writing output file: ${error.message}`);
   process.exit(1);
